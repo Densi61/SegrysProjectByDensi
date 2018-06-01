@@ -1,0 +1,2 @@
+# SegrysProjectByDensi
+Летняя практика (СЕГРИС)
