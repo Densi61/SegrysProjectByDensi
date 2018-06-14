@@ -1,0 +1,32 @@
+#main {
+	background-image: url();
+	border: 1px solid black;
+	width: 1350px;
+	height: 650px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: bottom;
+	font-family: comic sans ms;
+}
+.Field {
+	background-color: grey;
+	width: 1000px;
+	height: 100px;
+	display: inline-block;
+	border-radius: 7px;
+	color: white;
+	margin-top: 200px;
+	font-size: 25px;
+}
+.Begin {
+	display: inline-block;
+	border: 2px solid black;
+	border-radius: 5px;
+	width: 350px;
+	height: 75px;
+	background-color: grey;
+	color: black;
+	cursor: pointer;
+	font-size: 30px;
+	line-height: 75px;
+}
