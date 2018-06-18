@@ -1,6 +1,7 @@
+'use strict'
 let main = document.getElementById('main');
 
-//эйби сделай отдельные массивы для ветвей сюжета. Синк эбаут ит мээээн
+//Мэйби сделай отдельные массивы для ветвей сюжета. Синк эбаут ит мээээн
 // Тексты в field
 let arrayOfTextsForField = [];
 arrayOfTextsForField[0] = 'Игра сделана специально для летней практики СЕГРИС.';
@@ -45,10 +46,12 @@ arrayOfTextsForField[27] = '~Вы ещё 5 минут стучали по люк
 arrayOfTextsForField[28] = '~Вы садитесь и начинаете плакать.~';
 arrayOfTextsForField[29] = '~После долгого плача к вам приходит мысль. Должен ведь быть другой выход из канализации.~';
 arrayOfTextsForField[30] = '~Вам придётся проявить все ваши навыки выживания, полученные из фильмов.~';
-arrayOfTextsForField[31] = '~ ~';
-arrayOfTextsForField[32] = '~ ~';
-arrayOfTextsForField[33] = '~ ~';
-arrayOfTextsForField[34] = '~ ~';
+arrayOfTextsForField[31] = '~Для начала было бы неплохо добыть свет.~';
+arrayOfTextsForField[32] = '~К счастью у вас оказывается зажигалка, которую вы всё время носите в кармане.~';
+//Зажечь зажигалку + звук
+arrayOfTextsForField[33] = '~Свет есть, а это значит, что можно начинать похождения.~';
+arrayOfTextsForField[34] = '~И вот первый выбор: куда вам пойти налево или направо?~';
+
 // Тексты в field
 
 
@@ -121,12 +124,29 @@ luke_2.classList.add('Begin');
 let textForLuke_2 = document.createElement('p');
 textForLuke_2.innerHTML = 'Остаться на посту';
 
+let actionLight = document.createElement('div');
+actionLight.classList.add('Begin');
+
+let textForActionLight = document.createElement('p');
+textForActionLight.innerHTML = 'Зажечь зажигалку';
+
+let left = document.createElement('div');
+left.classList.add('Begin');
+
+let textForLeft = document.createElement('p');
+textForLeft.innerHTML = 'Налево';
+
+let right = document.createElement('div');
+right.classList.add('Begin');
+
+let textForRight = document.createElement('p');
+textForRight.innerHTML = 'Направо';
 //Переменные блоков
 
 HTMLAudioElement.prototype.stop = function()
 {
-this.pause();
-this.currentTime = 0.0;
+	this.pause();
+	this.currentTime = 0.0;
 }
 
 function WakeUp() {
@@ -150,6 +170,20 @@ function ChoiseOfLuke() {
 	luke_1.appendChild(textForLuke_1);
 	main.insertBefore(luke_2, field);
 	luke_2.appendChild(textForLuke_2);
+	blockCheck = true;
+}
+
+function Light() {
+	main.insertBefore(actionLight, field);
+	actionLight.appendChild(textForActionLight);
+	blockCheck = true;
+}
+
+function ChoiseOfDirection() {
+	main.insertBefore(left, field);
+	left.appendChild(textForLeft);
+	main.insertBefore(right, field);
+	right.appendChild(textForRight);
 	blockCheck = true;
 }
 
@@ -203,6 +237,13 @@ luke_2.addEventListener('click', function() {
 	i = 119;
 });
 
+actionLight.addEventListener('click', function () {
+	main.removeChild(actionLight);
+	blockCheck = false;
+	main.style.backgroundImage = "url('../Design/underground-background.jpg')";
+	textForField.innerHTML = arrayOfTextsForField[i+1];
+	i++;
+});
 
 field.addEventListener('click', function() {
 	if (blockCheck == false) {
@@ -240,8 +281,24 @@ field.addEventListener('click', function() {
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
 			break;
+		case 22 :
+			main.style.background = 'black';
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
+			break;
+		case 31 :
+			Light();
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
+			break;
+		case 33:
+			ChoiseOfDirection();
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
+			break;
 		case 119 :
 			main.style.backgroundImage = "url('../Design/room-background.png')";
+			break;
 		default :
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
