@@ -5,7 +5,7 @@ let main = document.getElementById('main');
 // Тексты в field
 let arrayOfTextsForField = [];
 arrayOfTextsForField[0] = 'Игра сделана специально для летней практики СЕГРИС.<br> (Для продолжения нажимай на серое поле с текстом).';
-arrayOfTextsForField[1] = 'Вы уже слышите звуки приближающихся войск.';
+arrayOfTextsForField[1] = 'Вы уже слышите звуки войск.';
 arrayOfTextsForField[2] = 'Отступать некуда.';
 arrayOfTextsForField[3] = 'Вы кричите, что есть мочи...';
 arrayOfTextsForField[4] = '"В АТАКУ!"';
