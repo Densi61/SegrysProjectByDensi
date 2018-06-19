@@ -34,26 +34,22 @@ arrayOfTextsForField[19] = '~Под этими ящиками вы замеча�
 	arrayOfTextsForField[120] = '~Тем не менее, ваш рабочий день подошёл к концу, и вы вернулись домой. Вы засыпаете с чувством выполненного долга, но не перестаёте думать о том люке.~';
 	//Конец дня если не выбрал люк
 arrayOfTextsForField[20] = '~Любопытство берёт верх, и вы спускаетесь в люк.~';
-// музыка канализации (звук воды)
-arrayOfTextsForField[21] = '~Вы оказываетесь в канализации. Чувствуется неприятный запах.~';
-arrayOfTextsForField[22] = '~Непонятно зачем, но вы стоите тут ещё несколько минут.~';
-arrayOfTextsForField[23] = '~Вдруг слышится звук закрытия люка, и наступает темнота.~';
+arrayOfTextsForField[21] = '~Вы спускаетесь буквально на несколько метров вниз.~';
+arrayOfTextsForField[22] = '~Вдруг слышится звук закрытия люка, и наступает темнота.~';
 // Темнота
-arrayOfTextsForField[24] = '~Вы нащупываете лестницу, поднимаеетсь и пытаетесь открыть люк.~';
-arrayOfTextsForField[25] = '~Чёрт. Кажется кто-то поставил на него ящики.~';
-arrayOfTextsForField[26] = '~Вам уже становится плохо, сердце начинает биться быстрее.~';
-arrayOfTextsForField[27] = '~Вы ещё 5 минут стучали по люку, но всё зря. Помощи не последовало...~';
-arrayOfTextsForField[28] = '~Вы садитесь и начинаете плакать.~';
-arrayOfTextsForField[29] = '~После долгого плача к вам приходит мысль. Должен ведь быть другой выход из канализации.~';
-arrayOfTextsForField[30] = '~Вам придётся проявить все ваши навыки выживания, полученные из фильмов.~';
-arrayOfTextsForField[31] = '~Для начала было бы неплохо добыть свет.~';
-arrayOfTextsForField[32] = '~К счастью у вас оказывается зажигалка, которую вы всё время носите в кармане.~';
-//Зажечь зажигалку + звук
-arrayOfTextsForField[33] = '~Свет есть, а это значит, что можно начинать похождения.~';
-arrayOfTextsForField[34] = '~И вот первый выбор: куда вам пойти налево или направо?~';
+arrayOfTextsForField[23] = '~Вы поднимаетесь и пытаетесь открыть люк.~';
+arrayOfTextsForField[24] = '~Чёрт. Кажется кто-то поставил на него ящики.~';
+arrayOfTextsForField[25] = '~Вам уже становится плохо, сердце начинает биться быстрее.~';
+arrayOfTextsForField[26] = '~Вы ещё 5 минут стучали по люку, но всё зря. Помощи не последовало...~';
+arrayOfTextsForField[27] = '~Вам ничего не остается, кроме того, как продолжить спускаться по лестнице.~';
+arrayOfTextsForField[28] = '~Вы спускаетесь очень долго. Кажется, что эта бесконечная лестница ведёт прямо к ядру Земли.~';
+arrayOfTextsForField[29] = '~Наконец, вы добираетесь до земли.~';
+arrayOfTextsForField[30] = '~Повернувшись вы чуть не ослепли от увиденного.~';
+arrayOfTextsForField[31] = '~Вы оказываетесь в переливающейся разными цветами пещере.~';
+arrayOfTextsForField[32] = '~Подобные вы могли увидеть только в играх.~';
+arrayOfTextsForField[33] = '~Вас переполняют эмоции. С одной стороны, вы оказались в сказочной пещере. С другой стороны, вы попали непонятно куда.~';
 
 // Тексты в field
-
 
 let field = document.createElement('div');
 main.appendChild(field);
@@ -124,23 +120,6 @@ luke_2.classList.add('Begin');
 let textForLuke_2 = document.createElement('p');
 textForLuke_2.innerHTML = 'Остаться на посту';
 
-let actionLight = document.createElement('div');
-actionLight.classList.add('Begin');
-
-let textForActionLight = document.createElement('p');
-textForActionLight.innerHTML = 'Зажечь зажигалку';
-
-let left = document.createElement('div');
-left.classList.add('Begin');
-
-let textForLeft = document.createElement('p');
-textForLeft.innerHTML = 'Налево';
-
-let right = document.createElement('div');
-right.classList.add('Begin');
-
-let textForRight = document.createElement('p');
-textForRight.innerHTML = 'Направо';
 //Переменные блоков
 
 HTMLAudioElement.prototype.stop = function()
@@ -170,20 +149,6 @@ function ChoiseOfLuke() {
 	luke_1.appendChild(textForLuke_1);
 	main.insertBefore(luke_2, field);
 	luke_2.appendChild(textForLuke_2);
-	blockCheck = true;
-}
-
-function Light() {
-	main.insertBefore(actionLight, field);
-	actionLight.appendChild(textForActionLight);
-	blockCheck = true;
-}
-
-function ChoiseOfDirection() {
-	main.insertBefore(left, field);
-	left.appendChild(textForLeft);
-	main.insertBefore(right, field);
-	right.appendChild(textForRight);
 	blockCheck = true;
 }
 
@@ -237,14 +202,6 @@ luke_2.addEventListener('click', function() {
 	i = 119;
 });
 
-actionLight.addEventListener('click', function () {
-	main.removeChild(actionLight);
-	blockCheck = false;
-	main.style.backgroundImage = "url('../Design/underground-background.jpg')";
-	textForField.innerHTML = arrayOfTextsForField[i+1];
-	i++;
-});
-
 field.addEventListener('click', function() {
 	if (blockCheck == false) {
 		console.log(i);
@@ -277,7 +234,7 @@ field.addEventListener('click', function() {
 			i++;
 			break;
 		case 20 :
-			main.style.backgroundImage = "url('../Design/underground-background.jpg')";
+			main.style.backgroundImage = "url('../Design/stairs-background.jpg')";
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
 			break;
@@ -286,18 +243,15 @@ field.addEventListener('click', function() {
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
 			break;
-		case 31 :
-			Light();
-			textForField.innerHTML = arrayOfTextsForField[i+1];
-			i++;
-			break;
-		case 33:
-			ChoiseOfDirection();
+		case 29 :
+			main.style.background = "url('../Design/cave-background.jpg')";
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
 			break;
 		case 119 :
 			main.style.backgroundImage = "url('../Design/room-background.png')";
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
 			break;
 		default :
 			textForField.innerHTML = arrayOfTextsForField[i+1];
