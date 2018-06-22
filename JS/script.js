@@ -545,6 +545,31 @@ field.addEventListener('click', function() {
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
 			break;
+		case 70 :
+			main.style.backgroundImage = "url('../Design/final-battle-lvl1-background.jpg')";
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
+			break;
+		case 71 :
+			main.style.backgroundImage = "url('../Design/final-battle-lvl2-background.jpg')";
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
+			break;
+		case 72 :
+			main.style.backgroundImage = "url('../Design/final-battle-lvl3-background.jpg')";
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
+			break;
+		case 73 :
+			main.style.backgroundImage = "url('../Design/final-battle-lvl4-background.jpg')";
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
+			break;
+		case 74 :
+			main.style.backgroundImage = "url('../Design/final-battle-lvl5-background.jpg')";
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
+			break;
 		case 75 :
 			main.style.backgroundImage = "url('../Design/storage-background.jpg')";
 			textForField.innerHTML = arrayOfTextsForField[i+1];
