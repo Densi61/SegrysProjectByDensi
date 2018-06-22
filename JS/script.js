@@ -175,7 +175,7 @@ let leftCheck = false;
 let useCoinsCheck = false;
 
 let textForBegin = document.createElement('p');	
-textForBegin.innerHTML = 'Пгнали!';
+textForBegin.innerHTML = 'Начать!';
 begin.appendChild(textForBegin);
 
 //Звуки
