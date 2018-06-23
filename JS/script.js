@@ -514,6 +514,7 @@ field.addEventListener('click', function() {
 			i++;
 			break;
 		case 20 :
+			lukeSound.play();
 			main.style.backgroundImage = "url('../Design/stairs-background.jpg')";
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
