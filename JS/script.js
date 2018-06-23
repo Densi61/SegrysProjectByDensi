@@ -194,6 +194,10 @@ battleSound.volume = 0.25;
 let swordSound = new Audio();
 swordSound.src = '../Audio/sword sound.mp3';
 swordSound.volume = 0.35;
+
+let dragonSound = new Audio();
+dragonSound.src = '../Audio/dragon roar.mp3';
+dragonSound.volume = 0.45;
 //Звуки
 
 
@@ -401,6 +405,7 @@ right.addEventListener('click', function() {
 });
 
 actionTakeSword.addEventListener('click', function () {
+	swordSound.play();
 	main.removeChild(actionTakeSword);
 	blockCheck = false;
 	textForField.innerHTML = arrayOfTextsForField[i+1];
@@ -533,6 +538,7 @@ field.addEventListener('click', function() {
 			i++;
 			break;
 		case 51 :
+			dragonSound.play();
 			MainChoise();
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
@@ -623,6 +629,11 @@ field.addEventListener('click', function() {
 			blockCheck = true;
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i = 99;
+			break;
+		case 117 :
+			dragonSound.play();
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
 			break;
 		case 120 :
 			if (runCheck == true) {
