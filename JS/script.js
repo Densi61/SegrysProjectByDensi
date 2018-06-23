@@ -179,6 +179,10 @@ begin.appendChild(textForBegin);
 
 //Звуки
 
+let battleSound = new Audio();
+battleSound.src = '../Audio/battle.mp3';
+battleSound.volume = 0.25;
+
 let alarmClockSound = new Audio();
 alarmClockSound.src = '../Audio/alarm clock.mp3';
 alarmClockSound.volume = 0.15;
@@ -187,9 +191,10 @@ let turnOffAlarmClockSound = new Audio();
 turnOffAlarmClockSound.src = '../Audio/turn off alarm clock.mp3';
 turnOffAlarmClockSound.volume = 0.5;
 
-let battleSound = new Audio();
-battleSound.src = '../Audio/battle.mp3';
-battleSound.volume = 0.25;
+let backgroundSound = new Audio();
+backgroundSound.src = '../Audio/background music.mp3';
+backgroundSound.volume = 0.3;
+backgroundSound.loop = true;
 
 let swordSound = new Audio();
 swordSound.src = '../Audio/sword sound.mp3';
@@ -352,6 +357,11 @@ begin.addEventListener('click', function() {
 actionTurnOffAlarmClock.addEventListener('click', function () {
 	alarmClockSound.stop();
 	turnOffAlarmClockSound.play();
+	turnOffAlarmClockSound.addEventListener('ended', function() {
+	    if (turnOffAlarmClockSound.duration === turnOffAlarmClockSound.currentTime) {
+	    	backgroundSound.play();
+	    }
+ 	});
 	main.removeChild(actionTurnOffAlarmClock);
 	blockCheck = false;
 	textForField.innerHTML = arrayOfTextsForField[i+1];
