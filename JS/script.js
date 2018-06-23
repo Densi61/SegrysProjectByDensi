@@ -181,12 +181,12 @@ begin.appendChild(textForBegin);
 
 let battleSound = new Audio();
 battleSound.src = '../Audio/battle.mp3';
-battleSound.volume = 0.25;
+battleSound.volume = 0.2;
 battleSound.loop = true;
 
 let alarmClockSound = new Audio();
 alarmClockSound.src = '../Audio/alarm clock.mp3';
-alarmClockSound.volume = 0.15;
+alarmClockSound.volume = 0.1;
 alarmClockSound.loop = true;
 
 let turnOffAlarmClockSound = new Audio();
@@ -204,11 +204,16 @@ swordSound.volume = 0.35;
 
 let dragonSound = new Audio();
 dragonSound.src = '../Audio/dragon roar.mp3';
-dragonSound.volume = 0.45;
+dragonSound.volume = 0.25;
 
 let lukeSound = new Audio();
 lukeSound.src = '../Audio/luke sound.mp3';
 lukeSound.volume = 0.1;
+
+let caveSound = new Audio();
+caveSound.src = '../Audio/cave music.mp3';
+caveSound.volume = 0.4;
+caveSound.loop = true;
 //Звуки
 
 
@@ -514,6 +519,7 @@ field.addEventListener('click', function() {
 			i++;
 			break;
 		case 20 :
+			backgroundSound.stop();
 			lukeSound.play();
 			main.style.backgroundImage = "url('../Design/stairs-background.jpg')";
 			textForField.innerHTML = arrayOfTextsForField[i+1];
@@ -526,6 +532,7 @@ field.addEventListener('click', function() {
 			i++;
 			break;
 		case 29 :
+			caveSound.play();
 			main.style.backgroundImage = "url('../Design/cave-background.jpg')";
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
