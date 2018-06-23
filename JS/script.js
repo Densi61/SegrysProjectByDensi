@@ -182,10 +182,12 @@ begin.appendChild(textForBegin);
 let battleSound = new Audio();
 battleSound.src = '../Audio/battle.mp3';
 battleSound.volume = 0.25;
+battleSound.loop = true;
 
 let alarmClockSound = new Audio();
 alarmClockSound.src = '../Audio/alarm clock.mp3';
 alarmClockSound.volume = 0.15;
+alarmClockSound.loop = true;
 
 let turnOffAlarmClockSound = new Audio();
 turnOffAlarmClockSound.src = '../Audio/turn off alarm clock.mp3';
