@@ -1,7 +1,6 @@
 'use strict'
 let main = document.getElementById('main');
 
-//Мэйби сделай отдельные массивы для ветвей сюжета. Синк эбаут ит мээээн
 // Тексты в field
 let arrayOfTextsForField = [];
 arrayOfTextsForField[0] = 'Игра сделана специально для летней практики СЕГРИС.<br> (Для продолжения нажимай на серое поле с текстом).';
