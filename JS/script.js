@@ -191,6 +191,9 @@ let battleSound = new Audio();
 battleSound.src = '../Audio/battle.mp3';
 battleSound.volume = 0.25;
 
+let swordSound = new Audio();
+swordSound.src = '../Audio/sword sound.mp3';
+swordSound.volume = 0.35;
 //Звуки
 
 
