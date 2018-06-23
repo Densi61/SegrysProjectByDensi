@@ -198,6 +198,10 @@ swordSound.volume = 0.35;
 let dragonSound = new Audio();
 dragonSound.src = '../Audio/dragon roar.mp3';
 dragonSound.volume = 0.45;
+
+let lukeSound = new Audio();
+lukeSound.src = '../Audio/luke sound.mp3';
+lukeSound.volume = 0.1;
 //Звуки
 
 
@@ -503,6 +507,7 @@ field.addEventListener('click', function() {
 			i++;
 			break;
 		case 22 :
+			lukeSound.play();
 			main.style.backgroundImage = "url('../Design/black-background.jpg')";
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
