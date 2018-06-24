@@ -208,12 +208,21 @@ dragonSound.volume = 0.25;
 
 let lukeSound = new Audio();
 lukeSound.src = '../Audio/luke sound.mp3';
-lukeSound.volume = 0.1;
+lukeSound.volume = 0.05;
 
 let caveSound = new Audio();
 caveSound.src = '../Audio/cave music.mp3';
 caveSound.volume = 0.4;
 caveSound.loop = true;
+
+let epicSound = new Audio();
+epicSound.src = '../Audio/epic music.mp3';
+epicSound.volume = 0.1;
+epicSound.loop = true;
+
+let coinsDroppingSound = new Audio();
+coinsDroppingSound.src = '../Audio/coins dropping sound.mp3';
+coinsDroppingSound.volume = 1;
 //Звуки
 
 
@@ -559,6 +568,8 @@ field.addEventListener('click', function() {
 			break;
 		case 48 :
 			main.style.backgroundImage = "url('../Design/dragon-cave-background.jpg')";
+			caveSound.stop();
+			epicSound.play();
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
 			break;
@@ -604,6 +615,8 @@ field.addEventListener('click', function() {
 			i++;
 			break;
 		case 75 :
+			caveSound.stop();
+			backgroundSound.play();
 			main.style.backgroundImage = "url('../Design/storage-background.jpg')";
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i++;
@@ -634,7 +647,14 @@ field.addEventListener('click', function() {
 			textForField.innerHTML = arrayOfTextsForField[88];
 			i = 88;
 			break;
+		case 101 :
+			dragonSound.play();
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
+			break;
 		case 107 :
+			epicSound.stop();
+			caveSound.play();
 			main.style.backgroundImage = "url('../Design/after-dragon-background.jpeg')";
 			textForField.innerHTML = arrayOfTextsForField[57];
 			i = 57;
@@ -654,6 +674,11 @@ field.addEventListener('click', function() {
 			blockCheck = true;
 			textForField.innerHTML = arrayOfTextsForField[i+1];
 			i = 99;
+			break;
+		case 116 :
+			coinsDroppingSound.play();
+			textForField.innerHTML = arrayOfTextsForField[i+1];
+			i++;
 			break;
 		case 117 :
 			dragonSound.play();
